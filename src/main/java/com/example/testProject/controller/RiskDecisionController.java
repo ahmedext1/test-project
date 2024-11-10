@@ -20,7 +20,7 @@ public class RiskDecisionController {
     }
 
     @PostMapping(value = "/api/decision", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<CreditDecision> decision(@RequestBody CustomerDebt customerDebt) {
+    public ResponseEntity<CreditDecisionResponse> decision(@RequestBody CustomerDebt customerDebt) {
         return ResponseEntity.ok(creditDecisionService.handleCreditRequest(customerDebt));
     }
 
